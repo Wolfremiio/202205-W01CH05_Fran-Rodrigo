@@ -9,4 +9,11 @@ body{
     margin: 0;
     padding: 0;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.header{
+    display: grid;
+    grid-template-columns: 4;
+    grid-template-rows: 2;
 }
