@@ -40,3 +40,20 @@ body{
 .menu{
     display: none;
 }
+.main-content{
+
+    &__media{
+        background-image: url(./../assets/img/media09.jpg);
+        width: 200;
+        height: 200;
+        
+    }
+    &__title{
+        text-transform: uppercase;
+        
+    
+    }
+    &__description{
+        
+    }
+}

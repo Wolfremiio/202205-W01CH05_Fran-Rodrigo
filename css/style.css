@@ -39,3 +39,12 @@ body {
 .menu {
   display: none;
 }
+
+.main-content__media {
+  background-image: url(./../assets/img/media09.jpg);
+  width: 200;
+  height: 200;
+}
+.main-content__title {
+  text-transform: uppercase;
+}
