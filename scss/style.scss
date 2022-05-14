@@ -65,7 +65,7 @@ body {
     justify-content: center;
     align-items: center;
     position: absolute;
-    bottom: 44rem;
+    bottom: 39rem;
     &__item {
         display: flex;
         justify-content: center;
@@ -168,7 +168,8 @@ body {
         }
     }
     & > div {
-        height: 9rem;
+        height: 100%;
+        padding-top: 9rem;
     }
 
     %card {
@@ -265,6 +266,52 @@ body {
     .secondary-content {
         &__pictures {
             flex-direction: row;
+        }
+    }
+    .footer.footer.footer {
+        width: 100vh;
+        &__title {
+            grid-row: 1;
+            grid-column: 5/8;
+        }
+        & > div {
+            padding: 0;
+            display: grid;
+            height: auto;
+            width: 100%;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            & > dl {
+                align-items: flex-start;
+            }
+            & > dl:first-of-type {
+                grid-row: 1;
+                grid-column: 2;
+            }
+            & > dl:nth-of-type(2) {
+                grid-row: 2;
+                grid-column: 2;
+            }
+            & > dl:nth-of-type(3) {
+                align-items: center;
+                grid-row: 1;
+                grid-column: 4;
+            }
+            & > dl:nth-of-type(4) {
+                align-items: flex-end;
+                grid-row: 1;
+                grid-column: 6;
+            }
+            & > dl:nth-of-type(5) {
+                align-items: flex-end;
+                grid-row: 2;
+                grid-column: 6;
+            }
+            & > dl:last-of-type {
+                align-items: flex-end;
+                grid-row: 3;
+                grid-column: 6;
+            }
         }
     }
 }
