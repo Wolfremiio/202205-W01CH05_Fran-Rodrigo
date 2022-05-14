@@ -59,7 +59,7 @@ body {
   width: 100%;
   height: 100%;
 }
-.main-content__second-pic {
+.main-content__video {
   display: none;
 }
 .main-content__title {
@@ -108,7 +108,7 @@ body {
   .main-content__pic {
     display: none;
   }
-  .main-content__second-pic {
+  .main-content__video {
     display: initial;
   }
 
