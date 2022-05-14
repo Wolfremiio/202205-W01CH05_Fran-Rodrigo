@@ -197,6 +197,13 @@ body {
   width: 45px;
 }
 
+.works-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
 @media (min-width: 600px) {
   .header__menu-button {
     display: none;
