@@ -9,6 +9,11 @@ body {
   width: 100%;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -23,18 +28,33 @@ body {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 4fr 4fr 1fr;
-  grid-template-rows: 1fr 2fr;
+  grid-template-rows: 1fr 3fr;
 }
 .header__title {
   font-size: 2rem;
-  grid-row: 2;
+  grid-row: 1/3;
   grid-column: 2/4;
   display: flex;
   justify-content: center;
+  margin: 0;
 }
 .header__menu-button {
   grid-row: 1;
   grid-column: 1;
+  background-color: transparent;
+  border: none;
+  width: 70px;
+}
+.header__menu-button > img {
+  width: 100%;
+}
+.header__info {
+  grid-row: 1;
+  grid-column: 4;
+  display: flex;
+  justify-content: end;
+  padding-right: 2rem;
+  letter-spacing: 0.4rem;
 }
 
 .menu {
@@ -105,6 +125,40 @@ body {
 }
 
 @media (min-width: 600px) {
+  .header__menu-button {
+    display: none;
+  }
+  .header__info {
+    display: none;
+  }
+
+  .menu {
+    display: initial;
+    grid-row: 1;
+    grid-column: 2/4;
+    position: absolute;
+    top: 5rem;
+    min-width: 100vw;
+  }
+  .menu__list {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0 5%;
+  }
+  .menu__list ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    min-width: 15rem;
+  }
+  .menu__link {
+    color: inherit;
+    text-decoration: none;
+    letter-spacing: 0.4rem;
+  }
+
   .main-content__pic {
     display: none;
   }
