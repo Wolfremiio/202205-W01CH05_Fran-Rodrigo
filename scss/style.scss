@@ -5,55 +5,95 @@
 *::before {
     box-sizing: border-box;
 }
-html, body{
+html,
+body {
     width: 100%;
 }
 
-body{
+body {
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: $greeny;
-    font-family: "Oswald",sans-serif;
-
-
+    font-family: "Oswald", sans-serif;
 }
-.header{
+.header {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 4fr 4fr 1fr;
     grid-template-rows: 1fr 2fr;
-    &__title{
+    &__title {
         font-size: 2rem;
         grid-row: 2;
         grid-column: 2/4;
         display: flex;
         justify-content: center;
     }
-    &__menu-button{
+    &__menu-button {
         grid-row: 1;
         grid-column: 1;
     }
 }
-.menu{
+.menu {
     display: none;
 }
-.main-content{
-
-    &__media{
+.main-content {
+    &__media {
         background-image: url(./../assets/img/media09.jpg);
         width: 200;
         height: 200;
-        
     }
-    &__title{
+    &__title {
         text-transform: uppercase;
-        
-    
     }
-    &__description{
-        
+    &__description {
+    }
+}
+
+%flex-column {
+    display: flex;
+    flex-direction: column;
+}
+.secondary-content {
+    @extend %flex-column;
+    align-items: center;
+    &__title {
+        text-transform: uppercase;
+        margin: 0;
+        letter-spacing: 0.4rem;
+        font-size: 2rem;
+        font-weight: 400;
+        transform: scaleY(0.9);
+    }
+    &__link {
+        color: inherit;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        letter-spacing: 0.3rem;
+    }
+    &__pictures {
+        @extend %flex-column;
+    }
+    &__picture {
+        padding: 10px 0;
+        margin: 0;
+        max-width: 600px;
+        & > img {
+            width: 100%;
+        }
+        & > figcaption {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
+
+@media (min-width: 600px) {
+    .secondary-content {
+        &__pictures {
+            flex-direction: row;
+        }
     }
 }
