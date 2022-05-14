@@ -18,16 +18,20 @@
             <h1 class="header__title">
                 <img src="./assets/img/logo.png" alt="logo" />
             </h1>
-            <button class="header__menu-button">
+            <a href="#menu" class="header__menu-button">
                 <img src="./assets/img/menu_1.png" alt="responsive-menu" />
-            </button>
+            </a>
             <p class="header__info">Home</p>
-            <nav class="menu">
+            <nav class="menu" id="menu">
                 <ul class="menu__list">
                     <li>
                         <ul>
                             <li class="menu__item">
-                                <a class="menu__link" href="#">Home</a>
+                                <a
+                                    class="menu__link menu__link--selected"
+                                    href="#"
+                                    >Home</a
+                                >
                             </li>
                             <li class="menu__item">
                                 <a class="menu__link" href="#">Works</a>
@@ -88,16 +92,26 @@
         </section>
 
         <footer class="footer">
-            <h3 class="footer__title">Lorem ipsum dolor</h3>
+            <h3 class="footer__title">Lorem <span>ipsum</span> dolor</h3>
+            <p>⨯</p>
+            <div></div>
             <dl class="footer__card">
                 <dt>lorem</dt>
                 <dd>mas lorem</dd>
                 <dd>un poco mas</dd>
             </dl>
             <dl class="footer__card">
-                <dt>algo por oaqui</dt>
+                <dt>Lodem ipsum</dt>
                 <dd>algo por alla</dd>
                 <dd>patata</dd>
+            </dl>
+            <dl class="footer__card-sns">
+                <dt>ya llegamos</dt>
+                <dd>
+                    <img src="./assets/img/Facebook.svg" alt="sns-fb" />
+                    <img src="./assets/img/Instagram.svg" alt="sns-ig" />
+                    <img src="./assets/img/Vimeo.svg" alt="sns-vm" />
+                </dd>
             </dl>
             <dl class="footer__card">
                 <dt>holi</dt>
@@ -113,10 +127,6 @@
                 <dt>ya llegamos</dt>
                 <dd>casi casi</dd>
                 <dd>por fin</dd>
-            </dl>
-            <dl class="footer__card-sns">
-                <dt>ya llegamos</dt>
-                <dd>AQUI VAN ICONOS</dd>
             </dl>
         </footer>
     </body>
