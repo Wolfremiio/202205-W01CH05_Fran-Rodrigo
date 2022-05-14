@@ -197,6 +197,14 @@ body {
   width: 45px;
 }
 
+.works-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+
 .about-content {
   display: flex;
   flex-direction: column;

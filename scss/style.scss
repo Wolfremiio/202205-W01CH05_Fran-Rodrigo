@@ -219,6 +219,13 @@ body {
         }
     }
 }
+.works-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
 
 .about-content {
     display: flex;
@@ -259,7 +266,6 @@ body {
         justify-content: center;
     }
 }
-
 @media (min-width: 600px) {
     .header {
         &__menu-button {
