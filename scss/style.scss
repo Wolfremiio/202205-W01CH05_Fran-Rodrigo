@@ -93,14 +93,47 @@ body {
     align-items: center;
     &__media {
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
     }
     &__pic {
         width: 100%;
-        height: 100%;
+    }
+    &__pic-overlay {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 40vw;
+        & img {
+            padding: 20px;
+            width: 25vw;
+        }
+        & p {
+            color: $greeny;
+            margin: 0;
+        }
     }
     &__video {
         display: none;
+    }
+    &__video-overlay {
+        display: none;
+        position: absolute;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 40vw;
+        & img {
+            padding: 40px;
+            width: 30vw;
+        }
+        & p {
+            text-transform: uppercase;
+            color: $greeny;
+            margin: 0;
+        }
     }
     &__title {
         text-transform: uppercase;
@@ -115,7 +148,19 @@ body {
         font-weight: 100;
     }
 }
-
+.break {
+    min-height: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    > p {
+        margin: 0;
+    }
+    > img {
+        width: 50px;
+    }
+}
 .secondary-content {
     @extend %flex-column;
     align-items: center;
@@ -135,11 +180,32 @@ body {
     }
     &__pictures {
         @extend %flex-column;
+        padding-top: 30px;
     }
     &__picture {
         padding: 10px 0;
         margin: 0;
         max-width: 600px;
+        &-overlay {
+            position: absolute;
+            & > img {
+                position: inherit;
+                display: none;
+            }
+            width: 33vw;
+            height: 31.1vw;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            background-color: transparent;
+            &:hover {
+                cursor: pointer;
+                background-color: rgba(0, 0, 0, 0.3);
+                & > img {
+                    display: initial;
+                }
+            }
+        }
         & > img {
             width: 100%;
         }
@@ -224,7 +290,16 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-flow: column;
+    width: 100vw;
+    & > div {
+        width: 100%;
+        & > div {
+            display: none;
+        }
+        & > img {
+            width: 100%;
+        }
+    }
 }
 
 .about-content {
@@ -232,7 +307,16 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 5%;
+    padding: 5% 0;
+    &__cover {
+        width: 100vw;
+        height: 25vw;
+        & > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
     &__description {
         display: flex;
         flex-direction: column;
@@ -266,6 +350,9 @@ body {
         justify-content: center;
     }
 }
+
+// --- MEDIA QUERIES
+
 @media (min-width: 600px) {
     .header {
         &__menu-button {
@@ -299,19 +386,34 @@ body {
             color: inherit;
             text-decoration: none;
             letter-spacing: 0.4rem;
+            &:hover {
+                color: $redy;
+            }
         }
     }
     .main-content {
         &__pic {
             display: none;
         }
+        &__pic-overlay {
+            display: none;
+        }
         &__video {
             display: initial;
         }
+        &__video-overlay {
+            display: flex;
+        }
     }
     .secondary-content {
+        &__link:hover {
+            color: $redy;
+        }
         &__pictures {
             flex-direction: row;
+        }
+        &__picture-overlay {
+            display: flex;
         }
     }
     .footer.footer.footer {
@@ -357,6 +459,39 @@ body {
                 align-items: flex-end;
                 grid-row: 3;
                 grid-column: 6;
+            }
+        }
+    }
+    .works-content {
+        flex-direction: row;
+        flex-wrap: wrap;
+        & > div {
+            display: flex;
+            width: 33.33vw;
+            flex-direction: column;
+            & > div {
+                position: absolute;
+                & > img {
+                    position: inherit;
+                    display: none;
+                }
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 25vw;
+                background-color: transparent;
+                &:hover {
+                    background-color: rgba(0, 0, 0, 0.3);
+                    & > img {
+                        display: initial;
+                    }
+                }
+            }
+            & > img:last-of-type {
+                width: 33.33vw;
+                height: 25vw;
+                object-fit: cover;
             }
         }
     }

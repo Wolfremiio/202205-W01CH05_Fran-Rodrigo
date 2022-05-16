@@ -96,14 +96,47 @@ body {
 }
 .main-content__media {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 .main-content__pic {
   width: 100%;
-  height: 100%;
+}
+.main-content__pic-overlay {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 40vw;
+}
+.main-content__pic-overlay img {
+  padding: 20px;
+  width: 25vw;
+}
+.main-content__pic-overlay p {
+  color: rgb(22, 255, 189);
+  margin: 0;
 }
 .main-content__video {
   display: none;
+}
+.main-content__video-overlay {
+  display: none;
+  position: absolute;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 40vw;
+}
+.main-content__video-overlay img {
+  padding: 40px;
+  width: 30vw;
+}
+.main-content__video-overlay p {
+  text-transform: uppercase;
+  color: rgb(22, 255, 189);
+  margin: 0;
 }
 .main-content__title {
   text-transform: uppercase;
@@ -115,6 +148,20 @@ body {
   text-align: center;
   text-transform: uppercase;
   font-weight: 100;
+}
+
+.break {
+  min-height: 8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.break > p {
+  margin: 0;
+}
+.break > img {
+  width: 50px;
 }
 
 .secondary-content {
@@ -134,10 +181,33 @@ body {
   font-size: 0.9rem;
   letter-spacing: 0.3rem;
 }
+.secondary-content__pictures {
+  padding-top: 30px;
+}
 .secondary-content__picture {
   padding: 10px 0;
   margin: 0;
   max-width: 600px;
+}
+.secondary-content__picture-overlay {
+  position: absolute;
+  width: 33vw;
+  height: 31.1vw;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+.secondary-content__picture-overlay > img {
+  position: inherit;
+  display: none;
+}
+.secondary-content__picture-overlay:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.secondary-content__picture-overlay:hover > img {
+  display: initial;
 }
 .secondary-content__picture > img {
   width: 100%;
@@ -202,7 +272,16 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-flow: column;
+  width: 100vw;
+}
+.works-content > div {
+  width: 100%;
+}
+.works-content > div > div {
+  display: none;
+}
+.works-content > div > img {
+  width: 100%;
 }
 
 .about-content {
@@ -210,7 +289,16 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 5%;
+  padding: 5% 0;
+}
+.about-content__cover {
+  width: 100vw;
+  height: 25vw;
+}
+.about-content__cover > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .about-content__description {
   display: flex;
@@ -277,16 +365,31 @@ body {
     text-decoration: none;
     letter-spacing: 0.4rem;
   }
+  .menu__link:hover {
+    color: rgb(255, 141, 172);
+  }
 
   .main-content__pic {
+    display: none;
+  }
+  .main-content__pic-overlay {
     display: none;
   }
   .main-content__video {
     display: initial;
   }
+  .main-content__video-overlay {
+    display: flex;
+  }
 
+  .secondary-content__link:hover {
+    color: rgb(255, 141, 172);
+  }
   .secondary-content__pictures {
     flex-direction: row;
+  }
+  .secondary-content__picture-overlay {
+    display: flex;
   }
 
   .footer.footer.footer {
@@ -334,6 +437,40 @@ body {
     align-items: flex-end;
     grid-row: 3;
     grid-column: 6;
+  }
+
+  .works-content {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .works-content > div {
+    display: flex;
+    width: 33.33vw;
+    flex-direction: column;
+  }
+  .works-content > div > div {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 25vw;
+    background-color: transparent;
+  }
+  .works-content > div > div > img {
+    position: inherit;
+    display: none;
+  }
+  .works-content > div > div:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .works-content > div > div:hover > img {
+    display: initial;
+  }
+  .works-content > div > img:last-of-type {
+    width: 33.33vw;
+    height: 25vw;
+    object-fit: cover;
   }
 
   .about-content__container {
